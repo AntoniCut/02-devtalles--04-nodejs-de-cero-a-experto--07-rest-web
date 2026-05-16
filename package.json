@@ -1,0 +1,44 @@
+{
+  "name": "07-rest-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "dev-introduccion": "tsx watch src/app-01-introduccion.ts",
+    "dev-http": "tsx watch src/app-02-http.ts",
+    "dev-http2": "tsx watch src/app-03-http2.ts",
+    "dev-express": "tsx watch src/app-04-express.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "pnpm run build && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.1.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.8.0",
+    "rimraf": "^6.1.3",
+    "tsx": "^4.19.4",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "env-var": "^7.5.0",
+    "express": "^5.2.1"
+  }
+}
