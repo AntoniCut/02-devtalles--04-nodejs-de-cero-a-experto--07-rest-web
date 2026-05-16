@@ -10,7 +10,7 @@
     "dev-http2": "tsx watch src/app-03-http2.ts",
     "dev-express": "tsx watch src/app-04-express.ts",
     "build": "rimraf ./dist && tsc",
-    "start": "node src/app-04-express.js",
+    "start": "tsx watch src/app-04-express.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
