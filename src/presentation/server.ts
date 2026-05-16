@@ -87,8 +87,13 @@ export class Server {
             console.log('Request URL => ', req.url);
 
             /** -----  `Ruta del archivo index.html`  ----- */
-            const indexPath = path.join(__dirname, '../..', this.publicPath, 'index.html');
-            res.sendFile(indexPath);
+            const indexPath = path.join(process.cwd(), this.publicPath, 'index.html');
+            res.sendFile(indexPath, (err) => {
+                if (err) {
+                    console.error('Error sending index.html:', err);
+                    res.status(404).send('index.html not found');
+                }
+            });
 
         });
 
